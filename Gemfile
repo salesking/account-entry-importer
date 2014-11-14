@@ -7,9 +7,9 @@ gem 'sk_api_schema'
 gem 'haml'
 gem 'rack-raw-upload'
 gem 'cancan'
+gem 'mysql2'
 
 gem 'unicorn'
-gem 'pg'
 gem 'bower-rails'
 gem 'non-stupid-digest-assets'
 gem 'sass-rails'
@@ -20,7 +20,6 @@ gem 'therubyracer'
 gem 'chronic'
 
 group :test, :development do
-  gem 'mysql2'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'byebug'
