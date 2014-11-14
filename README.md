@@ -1,11 +1,10 @@
-# SalesKing Line Item Importer
+# SalesKing Account Entry Importer
 
-A SalesKing app to import csv files to accomplish several goals. for example you might want to import tracked time from a third-party tracking tool or import orders from you eCommerce and so on.
+A SalesKing app to import csv files into your accounts. For example you might want to import tracked time from a third-party tracking tool.
 
 You can choose from different import-scenarios:
-* Create one draft document per row - you can choose the document type e.g. invoice, estimate, order within the App-UI
-* Create one document and import all rows as line-items
-* Add all rows as line-items to a existing draft-document - you can search and choose existing draft-documents within the App-UI
+* Create a new account and import all rows as account-entries
+* Add all rows as account-entries to an existing account - you can search and choose existing accounts within the App-UI
 
 ## Developer Info
 
@@ -63,9 +62,9 @@ local git branch where you add the ignored `salesking_app.yml` file:
 
 DON'T FORGET: never push production to your public branch, if you do you need to setup NEW app credentials
 
-## Translating line-item-importer
+## Translating account-entry-importer
 
-- Edit the translations directly on the [salesking/line-item-importer](http://www.localeapp.com/projects/6762) project on Locale.
+- Edit the translations directly on the [salesking/account-enty-importer](http://www.localeapp.com/projects/7521) project on Locale.
 - **That's it!**
 - The maintainer will then pull translations from the Locale project and push to Github.
 
