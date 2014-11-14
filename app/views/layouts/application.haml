@@ -1,0 +1,29 @@
+!!! Strict
+%html{ 'xmlns' => 'http://www.w3.org/1999/xhtml', 'xml:lang' => I18n.locale, 'lang' =>  I18n.locale }
+  %head
+    %title= 'SalesKing CSV Importer'
+    = stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+    = yield :head
+  %body
+    %header#header.clearfix
+      .head1
+        %nav.navbar.clearfix(role="navigation")
+          %ul.nav.navbar-nav
+            %li= link_to t('.attachments'), attachments_path, class: cp(attachments_path)
+            %li= link_to t('.mappings'),    mappings_path,    class: cp(mappings_path)
+            %li= link_to t('.imports'),     imports_path,     class: cp(imports_path)
+
+    %br
+    %br
+
+    - flash.each do |key, value|
+      %div{class: flash_class(key)}
+        = value
+
+    = yield
+
+    %script
+      = "window.gon=#{gon.to_json}".html_safe
+    = javascript_include_tag 'application'

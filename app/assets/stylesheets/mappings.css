@@ -1,0 +1,48 @@
+input.minimi{ width: 30px; }
+#source-fields, #target-fields { width: 100%;}
+.field{float:left; padding:5px; border: 1px solid #ddd; background: #F5F5F5; margin:3px; list-style: none;}
+#source-fields .field{cursor: move; }
+.over{background: #FFF6D9; padding: 5px; }
+.field.dropped{padding: 0;}
+.field div{float: left;}
+.field.dropped .target{background: #DDF4FB;  border-right: 1px solid #ddd; padding:4px}
+.field.dropped .source{background: #BFE7BF; padding:4px}
+.map_actions{cursor: pointer; margin: 0 0 0 6px; font-weight: bold}
+
+
+/* overriden bootstrap*/
+.options{clear:left; padding:5px}
+.options>div{clear:left;}
+.options input{float: left;}
+.options label{width:auto; float: left; padding: 0 0 0 5px}
+.help-block {display: block;}
+.field_with_errors input{background:#FDDFDE}
+
+/* cut of long labels in result sets */
+.select2-result-label{overflow: hidden; text-overflow: ellipsis;}
+
+/* for displaying errors */
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* encoding select box */
+#attachment_encoding{
+	max-width: 170px;
+}
+
+#attachment_encoding option{
+	overflow: auto;
+	text-overflow: ellipsis;
+}
+
+#form_bottom {
+	margin-top: 10px;
+}
+
+#document_attributes {
+	display: none;
+}

@@ -1,0 +1,314 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://demo.salesking.local:3000/api/accounts/a3hTC2A9Wr5lfdabxfpGMl.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer e72003cd56f54efb11ed8fdef282a633
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Origin, X-5apps-Store, X-CSRF-Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"bd07444fba0571695860984ecd28e0a3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Runtime:
+      - '0.133861'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2014-10-27)
+      Date:
+      - Fri, 14 Nov 2014 10:48:13 GMT
+      Content-Length:
+      - '786'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"account":{"id":"a3hTC2A9Wr5lfdabxfpGMl","number":"00010","name":"Test
+        Konto","description":null,"balance":null,"budget":1000.0,"default_price":35.0,"default_unit":null,"hide_fields":null,"contact_id":null,"document_id":null,"created_at":"2014-11-14T09:57:08+01:00","updated_at":"2014-11-14T09:57:08+01:00","team_id":null,"creator_id":"dyJm32nI8r3AyNabxfpGMl"},"links":[{"rel":"self","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl"},{"rel":"instances","href":"accounts"},{"rel":"destroy","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl"},{"rel":"update","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl"},{"rel":"create","href":"accounts"},{"rel":"account_entries","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl/account_entries"},{"rel":"account_billings","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl/account_billings"}]}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:48:13 GMT
+- request:
+    method: put
+    uri: http://demo.salesking.local:3000/api/accounts/a3hTC2A9Wr5lfdabxfpGMl.json
+    body:
+      encoding: UTF-8
+      string: '{"account":{"id":"a3hTC2A9Wr5lfdabxfpGMl","number":"00010","name":"Test
+        Konto","description":null,"balance":null,"budget":1000,"default_price":35,"default_unit":null,"hide_fields":null,"contact_id":null,"document_id":null,"created_at":"2014-11-14T09:57:08+01:00","updated_at":"2014-11-14T09:57:08+01:00","team_id":null,"creator_id":"dyJm32nI8r3AyNabxfpGMl"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer e72003cd56f54efb11ed8fdef282a633
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Origin, X-5apps-Store, X-CSRF-Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"bd07444fba0571695860984ecd28e0a3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Runtime:
+      - '0.128276'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2014-10-27)
+      Date:
+      - Fri, 14 Nov 2014 10:48:19 GMT
+      Content-Length:
+      - '786'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"account":{"id":"a3hTC2A9Wr5lfdabxfpGMl","number":"00010","name":"Test
+        Konto","description":null,"balance":null,"budget":1000.0,"default_price":35.0,"default_unit":null,"hide_fields":null,"contact_id":null,"document_id":null,"created_at":"2014-11-14T09:57:08+01:00","updated_at":"2014-11-14T09:57:08+01:00","team_id":null,"creator_id":"dyJm32nI8r3AyNabxfpGMl"},"links":[{"rel":"self","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl"},{"rel":"instances","href":"accounts"},{"rel":"destroy","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl"},{"rel":"update","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl"},{"rel":"create","href":"accounts"},{"rel":"account_entries","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl/account_entries"},{"rel":"account_billings","href":"accounts/a3hTC2A9Wr5lfdabxfpGMl/account_billings"}]}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:48:19 GMT
+- request:
+    method: post
+    uri: http://demo.salesking.local:3000/api/account_entries.json
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"name":null,"price_single":null,"quantity":"3","account_id":"a3hTC2A9Wr5lfdabxfpGMl"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer e72003cd56f54efb11ed8fdef282a633
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: 'Created '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Origin, X-5apps-Store, X-CSRF-Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Runtime:
+      - '0.236569'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2014-10-27)
+      Date:
+      - Fri, 14 Nov 2014 10:48:24 GMT
+      Content-Length:
+      - '681'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"id":"db7NZwA-Sr5lfdabxfpGMl","account_id":"a3hTC2A9Wr5lfdabxfpGMl","document_id":null,"item_id":null,"name":null,"description":null,"price_single":35.0,"net_total":105.0,"tax":null,"quantity_unit":null,"quantity":3.0,"date":"2014-11-14","billable":false,"billed_at":null,"created_at":"2014-11-14T11:48:24+01:00","updated_at":"2014-11-14T11:48:24+01:00","_destroy":false},"links":[{"rel":"self","href":"account_entries/db7NZwA-Sr5lfdabxfpGMl"},{"rel":"instances","href":"account_entries"},{"rel":"destroy","href":"account_entries/db7NZwA-Sr5lfdabxfpGMl"},{"rel":"update","href":"account_entries/db7NZwA-Sr5lfdabxfpGMl"},{"rel":"create","href":"account_entries"}]}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:48:24 GMT
+- request:
+    method: post
+    uri: http://demo.salesking.local:3000/api/account_entries.json
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"name":null,"price_single":null,"quantity":"4","account_id":"a3hTC2A9Wr5lfdabxfpGMl"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer e72003cd56f54efb11ed8fdef282a633
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: 'Created '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Origin, X-5apps-Store, X-CSRF-Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Runtime:
+      - '0.125127'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2014-10-27)
+      Date:
+      - Fri, 14 Nov 2014 10:48:29 GMT
+      Content-Length:
+      - '681'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"id":"dfaIkWA-Sr5lfdabxfpGMl","account_id":"a3hTC2A9Wr5lfdabxfpGMl","document_id":null,"item_id":null,"name":null,"description":null,"price_single":35.0,"net_total":140.0,"tax":null,"quantity_unit":null,"quantity":4.0,"date":"2014-11-14","billable":false,"billed_at":null,"created_at":"2014-11-14T11:48:29+01:00","updated_at":"2014-11-14T11:48:29+01:00","_destroy":false},"links":[{"rel":"self","href":"account_entries/dfaIkWA-Sr5lfdabxfpGMl"},{"rel":"instances","href":"account_entries"},{"rel":"destroy","href":"account_entries/dfaIkWA-Sr5lfdabxfpGMl"},{"rel":"update","href":"account_entries/dfaIkWA-Sr5lfdabxfpGMl"},{"rel":"create","href":"account_entries"}]}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:48:29 GMT
+- request:
+    method: post
+    uri: http://demo.salesking.local:3000/api/account_entries.json
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"name":null,"price_single":null,"quantity":"7","account_id":"a3hTC2A9Wr5lfdabxfpGMl"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer e72003cd56f54efb11ed8fdef282a633
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: 'Created '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Origin, X-5apps-Store, X-CSRF-Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Runtime:
+      - '0.124951'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2014-10-27)
+      Date:
+      - Fri, 14 Nov 2014 10:48:34 GMT
+      Content-Length:
+      - '681'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"id":"dieNkSA-Sr5lfdabxfpGMl","account_id":"a3hTC2A9Wr5lfdabxfpGMl","document_id":null,"item_id":null,"name":null,"description":null,"price_single":35.0,"net_total":245.0,"tax":null,"quantity_unit":null,"quantity":7.0,"date":"2014-11-14","billable":false,"billed_at":null,"created_at":"2014-11-14T11:48:34+01:00","updated_at":"2014-11-14T11:48:34+01:00","_destroy":false},"links":[{"rel":"self","href":"account_entries/dieNkSA-Sr5lfdabxfpGMl"},{"rel":"instances","href":"account_entries"},{"rel":"destroy","href":"account_entries/dieNkSA-Sr5lfdabxfpGMl"},{"rel":"update","href":"account_entries/dieNkSA-Sr5lfdabxfpGMl"},{"rel":"create","href":"account_entries"}]}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:48:34 GMT
+- request:
+    method: post
+    uri: http://demo.salesking.local:3000/api/account_entries.json
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"name":null,"price_single":null,"quantity":"3","account_id":"a3hTC2A9Wr5lfdabxfpGMl"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer e72003cd56f54efb11ed8fdef282a633
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: 'Created '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Origin, X-5apps-Store, X-CSRF-Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Runtime:
+      - '0.122011'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2014-10-27)
+      Date:
+      - Fri, 14 Nov 2014 10:48:39 GMT
+      Content-Length:
+      - '681'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"account_entry":{"id":"dliV-eA-Sr5lfdabxfpGMl","account_id":"a3hTC2A9Wr5lfdabxfpGMl","document_id":null,"item_id":null,"name":null,"description":null,"price_single":35.0,"net_total":105.0,"tax":null,"quantity_unit":null,"quantity":3.0,"date":"2014-11-14","billable":false,"billed_at":null,"created_at":"2014-11-14T11:48:39+01:00","updated_at":"2014-11-14T11:48:39+01:00","_destroy":false},"links":[{"rel":"self","href":"account_entries/dliV-eA-Sr5lfdabxfpGMl"},{"rel":"instances","href":"account_entries"},{"rel":"destroy","href":"account_entries/dliV-eA-Sr5lfdabxfpGMl"},{"rel":"update","href":"account_entries/dliV-eA-Sr5lfdabxfpGMl"},{"rel":"create","href":"account_entries"}]}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:48:39 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,45 @@
+/*
+ *= require bootstrap/dist/css/bootstrap.css
+ *= require font-awesome/css/font-awesome.css
+ *= require schmuugle/dist/css/schmuugle.css
+ *= require select2
+ *= require select2-bootstrap
+ *= require fileuploader
+ *= require mappings
+ *= require attachments
+ *= require buttons
+ *= require schmuugle_additions
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul.top_menu{margin:0;padding:0}
+ul.top_menu li{display:inline;float:left;border-right:1px solid #ddd;margin:0;padding:0}
+ul.top_menu li a{text-decoration:none;margin:3px 15px}
+ul.top_menu li a.current{color:#00376f}
+ul.top_menu li:first-child{border-left:none}
+ul.top_menu li:first-child a{margin-left:0}
+ul.top_menu li:last-child{border-right:none}
+hr.seperator{border-top:1px solid #ccc;background:#ccc;margin:5px 0}
+.clear{clear:both}
+form label span.required{color: red; font-size: 110%; margin-left: 4px;}
+
+// bootstrap overrides since we are suing an old bootstrap version
+
+.navbar .nav > li > a {
+  text-shadow: none;
+  color: #fff;
+  &:focus, &:hover{
+    color: #dadada;
+  }
+}

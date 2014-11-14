@@ -1,0 +1,64 @@
+#content.form
+  .row
+    .col-md-6.fit-to-top
+      %span.big-letters= t('mappings.reuse')
+  .row.mapping-border
+    .col-md-10.existing-mapping
+      .clearfix
+        %h4= t('mappings.select_reuse')
+        = select_tag 'existing_mapping_params', options_for_select(mapping_options), :include_blank => true, id: 'reuse-select-options'
+        %span.help-block
+      .clearfix.document_id
+        %h4= t('.existing_account')
+        .input= f.hidden_field :account_id
+        = link_to icon('trash-o'), '#', id: "clear_document_choser"
+        %span.help-block
+
+      .clearfix
+        %h4= t('.account_information')
+        %span.info= t('.account_information_info')
+        %p
+          = f.text_field :account_name
+          = t('.account_name')
+        %p
+          = f.text_field :account_budget
+          = t('.account_budget')
+        %p
+          = f.text_field :account_default_price
+          = t('.account_default_price')
+      .clearfix
+        %br
+        = button_tag t('.reuse_this_mapping_button'), class: 'btn btn-primary btn-large', id: 'reuse', style: 'display:none'
+  #new_mapping_body
+    .row
+      .col-md-6.fit-to-top
+        %span.big-letters= t('mappings.new_mapping')
+    .row
+      .col-md-6
+        .input= f.hidden_field :import_type, value: 'account'
+
+    .clearfix
+      %h4= t('mappings.source_fields')
+      %span.info= t('.source_fields_info')
+      .input
+        %ul#source-fields
+          - @attachment.rows(1).first.each_with_index do |item, index|
+            %li.field{'data-name' => item, 'data-source' => index}= item
+    .clearfix
+      %p= t('mappings.dnd_info')
+    .clearfix
+      %h4= t('.account_entry_mapping')
+      %span.info= t('.account_entry_mapping_info')
+      .input
+        %ul.target-fields
+          - account_entry_mapping_fields.each do |field_attributes|
+            %li.field
+              .target{field_attributes}= field_attributes['data-target']
+    
+    .clearfix
+      %hr.form_bottom
+        = f.submit t('.proceed_to_import'), class: 'btn btn-primary btn-large'
+
+#side
+  .actions
+    = link_to t(:'link.back'), new_attachment_path, class: 'btn btn-secondary'

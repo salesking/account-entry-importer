@@ -1,0 +1,36 @@
+.header
+  .head2
+    .title
+      = t('link.step', step: 3, total: 3)
+      = t('imports.new')
+  .head3
+    .info
+      - import_type = @import.attachment.mapping.import_type
+      = t(import_type, scope: 'activerecord.attributes.mapping.enum_values.import_type')
+      = "/"
+      = t('imports.total', count: @import.attachment.rows.size - 1)
+    
+  
+#side
+  .side-list
+    .side-list-item
+      = form_for [@attachment, @import] do |f|
+        .actions
+          = f.submit t('imports.create'), class: "btn btn-danger"
+          = link_to t('link.back'), new_attachment_mapping_path, class: "btn secondary"
+
+#content
+  %h2=t('attachments.new.preview')
+  %p=t('attachments.new.preview_info')
+  %table.table
+    - @import.preview.each_with_index do |row, index|
+      - if index == 0
+        %thead
+          - row.each do |item|
+            %th= item
+      - else
+        %tr
+        - row.each do |item|
+          %td= item
+
+

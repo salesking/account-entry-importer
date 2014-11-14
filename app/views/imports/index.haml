@@ -1,0 +1,34 @@
+.header
+  .head2
+    .title
+      = Import.model_name.human(count: 5)
+      %small= @imports.size
+  .head3
+    .btn-toolbar-main
+      .btn-group.left-space
+        %button.btn{title: t(:'link.destroy')}
+          %i.fa.fa-trash-o
+
+#side
+  %a.btn.btn-danger{href: new_attachment_path, title: t(:'link.new_import')} 
+    = t(:'link.new_import')
+
+#content
+  %table.table
+    %thead
+      %tr
+        %th.check-column
+          %input{id: "id", name: "id", type: "checkbox", value: 1}
+        %th= Import.model_name.human(count: 1)
+        %th= Import.human_attribute_name(:created_at)
+    %tbody
+      - @imports.each do |import|
+        %tr
+          %td.check-column
+            %input{:type=>"checkbox", :name=>"ids[]", :value=>"#{import.id}"}
+          %td
+            - if import.data_rows.failed.present?
+              = link_to import.title, import
+            - else
+              = import.title
+          %td= import.created_at

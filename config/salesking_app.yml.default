@@ -1,0 +1,37 @@
+defaults: &defaults
+  scope:
+    - 'offline_access'
+    - 'api/accounts:read,create,update'
+    - 'api/account_entries:create,read'
+  # UNIQUE canvas-slug as set by you in salesking app creation. MUST be
+  # Users find the app at SUB.salesking.eu/app/csv-importer
+  #
+  # acl - scope defines what the app is allowed to do.
+  canvas_slug: account-entry-importer
+
+development:
+  #oAuth app credentials
+  id: your-client-id
+  secret: your-client-secret
+
+  # url of the salesking instance(here on our dev cloud)
+  # *(star) is replaced with the subdomain of the user accessing your app
+  sk_url: https://*.salesking.eu
+
+  # comming back from oauth dialog to this app
+  redirect_url: http://localhost:3000/login_success
+
+  <<: *defaults
+
+test:
+  <<: *defaults
+  id: abcdef
+  secret: fedcab
+  sk_url: https://*.dev.salesking.eu
+  redirect_url: http://localhost:3002/login_success
+
+production:
+  <<: *defaults
+  id:
+  secret:
+  redirect_url: http://localhost:3000/login_success

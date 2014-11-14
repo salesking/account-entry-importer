@@ -1,0 +1,38 @@
+- document_import = @import.attachment.mapping.import_type == 'account'
+.header
+  .head2
+    .title
+      = Import.model_name.human(count: 1)
+  .head3
+    .btn-toolbar-main.left-space
+      %a.btn{href: mappings_path, title: t(:'link.back')}
+        %i.fa.fa-level-up.fa-rotate-270
+      .btn-group
+        %button.btn{title: t(:'link.destroy')}
+          = link_to(icon('trash-o'), @mapping, data: {confirm: t('mappings.delete_confirm'), method: :delete})
+
+
+#side
+  .side-list
+    .side-list-item
+      %a.btn.btn-danger{href: new_attachment_path, title: t(:'link.new_import')} 
+        = t(:'link.new_import')
+    .side-list-item
+      = link_to(t('.open_account'), salesking_document_link('account', @import.data_rows.first.external_id), target: '_parent', class: "btn btn-primary btn-large") if @import.success?
+
+#content
+  - if @import.data_rows.failed.present?
+    %table.table
+      %thead
+        %tr
+          %th= DataRow.human_attribute_name(:log)
+          - if document_import
+            %th= DataRow.human_attribute_name(:external_id)
+      %tbody
+        - @import.data_rows.failed.each do |row|
+          %tr
+            %td= row.log
+            - if document_import && row.external_id.present?
+              %td= link_to t('.open_in_salesking'), salesking_document_link(document_type, row.external_id), target: '_parent'
+  - else
+    %h2= @import.title

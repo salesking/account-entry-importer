@@ -1,0 +1,33 @@
+.header
+  .head2
+    .title
+      = Mapping.model_name.human(count: 5)
+      %small= @mappings.size
+  .head3
+    .btn-toolbar-main.left-space
+      .btn-group
+        %button.btn{title: t(:'link.destroy')}
+          %i.fa.fa-trash-o
+
+#side
+  .side-list
+    .side-list-item
+      %a.btn.btn-danger{href: new_attachment_path, title: t(:'link.new_import')} 
+        = t(:'link.new_import')
+
+#content
+  %table.table
+    %thead
+      %tr
+        %th.check-column
+          %input{id: "id", name: "id", type: "checkbox", value: 1}
+        %th= Mapping.model_name.human(count: 1)
+        %th= Mapping.human_attribute_name(:created_at)
+    %tbody
+      - @mappings.each do |mapping|
+        %tr
+          %td.check-column
+            %input{:type=>"checkbox", :name=>"ids[]", :value=>"#{mapping.id}"}
+          %td
+            = link_to mapping.title, mapping
+          %td= mapping.created_at
