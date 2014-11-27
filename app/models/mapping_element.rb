@@ -8,7 +8,7 @@
 # - split: split source field into multiple target fields
 #
 class MappingElement < ActiveRecord::Base
-  CONVERT_TYPES = %w(enum date join price).freeze
+  CONVERT_TYPES = %w(enum date join price boolean).freeze
 
   belongs_to :mapping
 
@@ -48,6 +48,12 @@ class MappingElement < ActiveRecord::Base
   def convert_price(data_row)
     value = source_value(data_row)
     value.try(:match, /([0-9\.,]+)/).try(:[], 1) || value
+  end
+
+  def convert_boolean(data_row)
+    value = source_value(data_row)
+    res = ActiveSupport::JSON.decode(conversion_options).detect {|trg_val, src_val| value == src_val }
+    res && res[0]
   end
 
   # == Params

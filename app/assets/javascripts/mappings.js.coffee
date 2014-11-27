@@ -47,6 +47,7 @@ jQuery ->
     addEnumFields(el) if $('.target', el).attr('data-enum') != undefined
     addDateFields(el) if $('.target', el).attr('data-format') == 'date'
     addPriceField(el) if ['price_single', 'cost'].indexOf($('.target', el).attr('data-name')) != -1
+    addBooleanFields(el) if $('.target', el).attr('data-type') == 'boolean'
 
   addFields = (el, ui) ->
     $('.target', el).after "<div class='source' " +
@@ -71,6 +72,14 @@ jQuery ->
       name = this.replace( /["\[\]]/g, '')
       els.push "<div> <input class='mini' name='" + name + "' type='text'> <label>=> " + name + "</label></div>"
     els.push "<input name='conversion_type' type='hidden' value='enum'>"
+    els.push "</div>"
+    el.append els.join('')
+
+  addBooleanFields = (el) ->
+    els = ["<div class='options'>"]
+    els.push "<div> <input class='mini' name='true' type='text'> <label>=> True</label></div>"
+    els.push "<div> <input class='mini' name='false' type='text'> <label>=> False</label></div>"
+    els.push "<input name='conversion_type' type='hidden' value='boolean'>"
     els.push "</div>"
     el.append els.join('')
 
