@@ -69,7 +69,7 @@ jQuery ->
 
     $.each $('.target', el).attr('data-enum').split(','), ->
       #clean "[] from strings, comming from ary markup
-      name = this.replace( /["\[\]]/g, '')
+      name = $.trim(this.replace( /["\[\]]/g, ''))
       els.push "<div> <input class='mini' name='" + name + "' type='text'> <label>=> " + name + "</label></div>"
     els.push "<input name='conversion_type' type='hidden' value='enum'>"
     els.push "</div>"
