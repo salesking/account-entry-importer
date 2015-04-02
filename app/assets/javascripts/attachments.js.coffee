@@ -42,6 +42,7 @@ jQuery ->
       $('#continue-button').hide();
       $('#continue-button').hide();
     else
+      $('#invalid-csv-error').hide()
       csv = ['<table class="table">']
       $.each data.rows, (index, row) ->
         if index == 0
