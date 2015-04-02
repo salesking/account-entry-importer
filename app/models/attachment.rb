@@ -22,7 +22,7 @@ class Attachment < ActiveRecord::Base
   validate :column_separator_presence
 
   #attr_accessible :column_separator, :quote_character, :uploaded_data, :encoding, :mapping_id
-  attr_reader :error_rows
+  attr_reader :error_rows, :parse_error
 
   def column_separator=(original_value)
     self.send(:write_attribute, :column_separator, original_value == "\\t" ? "\t" : original_value)
@@ -59,7 +59,11 @@ class Attachment < ActiveRecord::Base
   end
 
   def rows(size = 0)
-    parsed_data[0..(size - 1)]
+    if parsed_data
+      parsed_data[0..(size - 1)]
+    else
+      parsed_data
+    end
   end
 
   private
@@ -67,16 +71,19 @@ class Attachment < ActiveRecord::Base
   # When parsing data, we expect our file to be saved as valid utf-8
   # TODO rescue parser errors -> rows empty
   def parsed_data
-    @parsed_data ||= begin
+   @parsed_data ||= begin
       CSV.read(full_filename, col_sep: column_separator, quote_char: quote_character, encoding: encoding)
-    rescue #CSV::MalformedCSVError => er
+    rescue => e #CSV::MalformedCSVError => er
+      @parse_error = e.to_s
       rows = []
       #one more attempt. If BOM is present in the file.
       begin
         file = File.open(full_filename, 'rb:bom|utf-8')
         rows = CSV.parse(file.read.force_encoding('ISO-8859-1'))
+      rescue => e
+        
       ensure
-        return rows
+        return rows.empty? ? false : rows
       end
     end
   end

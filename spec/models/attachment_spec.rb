@@ -34,6 +34,7 @@ describe Attachment do
   end
 
   let(:attachment) { create(:attachment) }
+  let(:invalid_attachment) { create(:attachment, uploaded_data: file_upload('invalid_csv.csv') ) }
 
   it 'should set filename and disk_filename' do
     expect(attachment.filename).to eq 'test1.csv'
@@ -55,6 +56,11 @@ describe Attachment do
   it 'parses csv data' do
     expect(attachment.rows.size).to eq 5
     expect(attachment.rows.first.size).to be > 1
+  end
+
+  it 'set error for invalid csv' do
+    expect(invalid_attachment.rows).to eq false
+    expect(invalid_attachment.parse_error).to eq 'Missing or stray quote in line 3'
   end
 
   it 'reveals specified number of rows' do
