@@ -9,7 +9,8 @@ Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'bo
 # Rails.application.config.assets.precompile += %w( search.js )
 # Add Webfonts from bower libs to the Asset Pipeline
 
-Rails.application.config.assets.precompile += %w( bootstrap/dist/fonts/glyphicons-halflings-regular.eot
+Rails.application.config.assets.precompile += %w( frontend.css
+                                                  bootstrap/dist/fonts/glyphicons-halflings-regular.eot
                                                   bootstrap/dist/fonts/glyphicons-halflings-regular.woff
                                                   bootstrap/dist/fonts/glyphicons-halflings-regular.ttf
                                                   font-awesome/fonts/FontAwesome.otf

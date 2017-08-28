@@ -1,5 +1,5 @@
 jQuery ->
-  $('#reuse-select-options').on 'change', (e) -> 
+  $('#reuse-select-options').on 'change', (e) ->
     if $(this).val() <= 1
       $('#reuse').hide();
       $('#new_mapping_body').show();
@@ -9,7 +9,7 @@ jQuery ->
       fillInAccountInfo($(this).val())
 
   fillInAccountInfo = (el) ->
-    
+
     # clear account form
     $('#mapping_account_id').select2('data', {id: null, text: null})
 
@@ -18,7 +18,7 @@ jQuery ->
       $('#mapping_account_name').val(account_infos[2])
       $('#mapping_account_budget').val(account_infos[4])
       $('#mapping_account_default_price').val(account_infos[3])
-      $("#mapping_account_id").select2("data", { id: account_infos[1], text: account_infos[5] }).trigger("change");;
+      $("#mapping_account_id").select2("data", { id: account_infos[1], text: account_infos[5] }).trigger("change");
       disableAccountInputs()
     else if account_infos[1].length < 1 && (account_infos[2].length > 1 || account_infos[3].length > 1 || account_infos[4].length > 1)
       $('#mapping_account_name').val(account_infos[2])
